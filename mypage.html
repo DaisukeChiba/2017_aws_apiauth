@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Cognito用JS -->
+    <script src="js/jsbn.js"></script>
+    <script src="js/jsbn2.js"></script>
+    <script src="js/sjcl.js"></script>
+    <script src="js/aws-cognito-sdk.min.js"></script>
+    <script src="js/amazon-cognito-identity.min.js"></script>
+
+    <!-- マイページ用JS -->
+    <script src="js/mypage.js"></script>
+    <script src="js/api.js"></script>
+
+    <title>マイページ</title>
+</head>
+
+<body>
+    <h2>マイページ</h2>
+    <h5 id="username"></h5>
+
+    <div>
+        <label>検索する本のISBNコード</label>
+        <input type="text" id="isbn" value="9784774166858" />
+        <input onClick="apicall1();" type="button" value="Google Books API呼出" />
+    </div>
+    <div id="book_result"></div>
+
+    <div>
+        <label>NHK番組ジャンル</label>
+        <select id="genre">
+            <option value="0000">ニュース／報道(定時・総合)</option>
+            <option value="0100">スポーツ(スポーツニュース)</option>
+            <option value="0300">ドラマ(国内ドラマ)</option>
+        </select>
+        <input onClick="apicall2();" type="button" value="Node-RED API呼出" />
+    </div>
+    <div id="program_result"></div>
+
+    <div>
+        <input onClick="signout();" type="button" value="サインアウト" />
+    </div>
+</body>
+</html>
